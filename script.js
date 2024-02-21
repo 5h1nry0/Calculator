@@ -51,6 +51,10 @@ function operate(){
         firstNumber= multiply(Number(firstNumber),Number(secondNumber))
         secondNumber = ''
     }
+    else if(operator=="/"&& secondNumber==='0') {
+        alert('Impossible to divide by 0')
+        operator = ''
+    }
      else if(operator=="/") {
         firstNumber= divide(Number(firstNumber),Number(secondNumber))
         secondNumber = ''
