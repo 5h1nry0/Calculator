@@ -16,15 +16,15 @@ let equalsButton = document.getElementById("equals")
 let clearButton = document.getElementById("clear")
 let display = document.getElementById("display")
 display.value = []
-let result = 0
+let firstNumber = ''
+let secondNumber = ''
+let operator = ''
 
 function add(a,b){
-    let result = a+b
-    display.value = result
-    display.textContent = result
+    return a+b
 }
 
-function substract(a,b){
+function subtract(a,b){
     return a-b
 }
 
@@ -36,180 +36,208 @@ function divide(a,b){
     return a/b
 }
 
-function operate(firstNumber,operator,secondNumber){
-switch (operator){
-    case "+" : add(firstNumber,secondNumber)   
-    case "-" : substract(firstNumber,secondNumber)   
-    case "*" : multiply(firstNumber,secondNumber)
-    case "/" : divide(firstNumber,secondNumber)
+function operate(){
+    if(operator=="+") {
+        firstNumber = add(Number(firstNumber),Number(secondNumber))
+        secondNumber = ''
     }
+     else if(operator=="-") {
+        firstNumber= subtract(Number(firstNumber),Number(secondNumber))
+        secondNumber = ''
+    }  
+     else if(operator=="*") {
+        firstNumber= multiply(Number(firstNumber),Number(secondNumber))
+        secondNumber = ''
+    }
+     else if(operator=="/") {
+        firstNumber= divide(Number(firstNumber),Number(secondNumber))
+        secondNumber = ''
+    }
+     else {return}
+
+     return firstNumber
 }
 
+
 oneButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-            display.value.push(1);
-            display.textContent = '1';
-        }
-    else {
-        console.log(display.value)
-        return
-    }    
+    // if(display.value[0]===undefined||
+    //     display.value.length== 2) {
+    //         display.value.push(1);
+    //         display.textContent = '1';
+    //     }
+
+    if(operator ==='') {
+        firstNumber = firstNumber +'1';
+        display.textContent = firstNumber
+    }
+    else if(operator !=='') {
+        secondNumber = secondNumber +'1';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 twoButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(2);
-        display.textContent = '2';
+    if(operator ==='') {
+        firstNumber = firstNumber +'2';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'2';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 threeButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-    display.value.length== 2) {
-        display.value.push(3);
-        display.textContent = '3';
+    if(operator ==='') {
+        firstNumber = firstNumber +'3';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'3';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 fourButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(4);
-        display.textContent = '4';
+    if(operator ==='') {
+        firstNumber = firstNumber +'4';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'4';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 fiveButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(5);
-        display.textContent = '5';
+    if(operator ==='') {
+        firstNumber = firstNumber +'5';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'5';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 sixButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(6);
-        display.textContent = '6';
+    if(operator ==='') {
+        firstNumber = firstNumber +'6';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'6';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 sevenButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(7);
-        display.textContent = '7';
+    if(operator ==='') {
+        firstNumber = firstNumber +'7';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'7';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 eightButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(8);
-        display.textContent = '8';
+    if(operator ==='') {
+        firstNumber = firstNumber +'8';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'8';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 nineButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(9)
-        display.textContent = '9'
+    if(operator ==='') {
+        firstNumber = firstNumber +'9';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'9';
+        display.textContent = secondNumber
+    }
+    else {return}    
 })
 
 zeroButton.addEventListener('click', (e) => {
-    if(display.value[0]===undefined||
-        display.value.length== 2) {
-        display.value.push(0);
-        display.textContent = '0';
+    if(operator ==='') {
+        firstNumber = firstNumber +'0';
+        display.textContent = firstNumber
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(operator !=='') {
+        secondNumber = secondNumber +'0';
+        display.textContent = secondNumber
+    }
+    else {return}     
 })
 
 addButton.addEventListener('click', (e) => {
-    if(display.value[1]===undefined) {
-        display.value.push('+');
+    // if(display.value[1]===undefined) {
+    //     display.value.push('+');
+    // }
+    // else {
+    //     console.log(display.value)
+    //     return
+    // }    
+    if(secondNumber ==='') {
+        operator = '+'
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(secondNumber !=='') {
+        operate(firstNumber,operator,secondNumber);
+        display.textContent = Number(firstNumber).toFixed(2)
+    }
 })
 
 substractButton.addEventListener('click', (e) => {
-    if(display.value[1]===undefined) {
-        display.value.push('-');
+    if(secondNumber ==='') {
+        operator = '-'
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(secondNumber !=='') {
+        operate(firstNumber,operator,secondNumber);
+        display.textContent = Number(firstNumber).toFixed(2)
+    }
 })
 
 multiplyButton.addEventListener('click', (e) => {
-    if(display.value[1]===undefined) {
-        display.value.push('*');
+    if(secondNumber ==='') {
+        operator = '*'
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(secondNumber !=='') {
+        operate(firstNumber,operator,secondNumber);
+        display.textContent = Number(firstNumber).toFixed(2)
+    }
 })
 
 divideButton.addEventListener('click', (e) => {
-    if(display.value[1]===undefined) {
-        display.value.push('/');
+    if(secondNumber ==='') {
+        operator = '/'
     }
-    else {
-        console.log(display.value)
-        return
-    }    
+    else if(secondNumber !=='') {
+        operate(firstNumber,operator,secondNumber);
+        display.textContent = Number(firstNumber).toFixed(2)
+    }
 })
 
 equalsButton.addEventListener('click', (e) => {
-    if(display.value.length== 3 ) {
-        operate(display.value);
+    if(secondNumber ==='') return
+    else {
+        operate(firstNumber,operator,secondNumber);
+        display.textContent = Number(firstNumber).toFixed(2)
     }
-    else {return}    
 })
 
 
