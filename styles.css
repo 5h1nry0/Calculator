@@ -1,0 +1,65 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px;
+    position: relative;
+}
+
+.number{
+    background-color: black;
+    color: white;
+    width: 70px;
+    height: 70px;
+    font-size: 21px;
+}
+
+.operator{
+    background-color: rgb(156, 156, 156);
+    color: white;
+    width: 70px;
+    height: 70px;
+    font-size: 21px;
+
+}
+
+.operators{
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    top: 140px ;
+}
+
+.numbers{
+    position: absolute;
+    left: 0;
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap ;
+    top: 140px ;
+
+}
+
+.topButtons{
+    position: absolute;
+    top: 70px;   
+    display: flex;
+}
+
+.topButton{
+    background-color: brown;
+    color: white;
+    width: 140px;
+    height: 70px;
+}
+
+.display{
+    background-color: rgb(219, 214, 214);
+    color: black;
+    width: 280px;
+    height: 70px;
+    border-style: solid;
+    border-color: black;
+    text-align: end;
+    font-size: 42px;
+}
