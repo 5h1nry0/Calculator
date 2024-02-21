@@ -14,6 +14,8 @@ let multiplyButton = document.getElementById("multiply")
 let divideButton = document.getElementById("divide")
 let equalsButton = document.getElementById("equals")
 let clearButton = document.getElementById("clear")
+let backspaceButton = document.getElementById("backspace")
+let dotButton = document.getElementById("dot")
 let display = document.getElementById("display")
 display.value = []
 let firstNumber = ''
@@ -198,7 +200,8 @@ addButton.addEventListener('click', (e) => {
     }
     else if(secondNumber !=='') {
         operate(firstNumber,operator,secondNumber);
-        display.textContent = Number(firstNumber).toFixed(2)
+        display.textContent = Number(firstNumber).toFixed(2);
+        operator = '+'
     }
 })
 
@@ -208,7 +211,8 @@ substractButton.addEventListener('click', (e) => {
     }
     else if(secondNumber !=='') {
         operate(firstNumber,operator,secondNumber);
-        display.textContent = Number(firstNumber).toFixed(2)
+        display.textContent = Number(firstNumber).toFixed(2);
+        operator = '-';
     }
 })
 
@@ -218,7 +222,8 @@ multiplyButton.addEventListener('click', (e) => {
     }
     else if(secondNumber !=='') {
         operate(firstNumber,operator,secondNumber);
-        display.textContent = Number(firstNumber).toFixed(2)
+        display.textContent = Number(firstNumber).toFixed(2);
+        operator = '*'
     }
 })
 
@@ -228,7 +233,8 @@ divideButton.addEventListener('click', (e) => {
     }
     else if(secondNumber !=='') {
         operate(firstNumber,operator,secondNumber);
-        display.textContent = Number(firstNumber).toFixed(2)
+        display.textContent = Number(firstNumber).toFixed(2);
+        operator = '/';
     }
 })
 
@@ -240,6 +246,34 @@ equalsButton.addEventListener('click', (e) => {
     }
 })
 
+clearButton.addEventListener('click', (e) => {
+    firstNumber = ''
+    secondNumber = ''
+    operator = ''
+    display.textContent = firstNumber
+})
 
+backspaceButton.addEventListener('click', (e) => {
+    if(secondNumber !=='') {
+        secondNumber = String(secondNumber).slice(0,-1)
+        display.textContent = Number(secondNumber)
+    }
+    else if(firstNumber !=='') {
+        firstNumber = String(firstNumber).slice(0,-1)
+        display.textContent = Number(firstNumber)
+    }
+    else {return}  
+})
 
+dotButton.addEventListener('click', (e) => {
+    if(operator ===''&& !firstNumber.includes('.')) {
+        firstNumber = firstNumber +'.';
+        display.textContent = firstNumber
+    }
+    else if(operator !==''&& !secondNumber.includes('.')) {
+        secondNumber = secondNumber +'.';
+        display.textContent = secondNumber
+    }
+    else {return}  
+})
 
